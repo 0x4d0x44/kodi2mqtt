@@ -2,6 +2,7 @@ MQTT addon for Kodi
 ===================
 
   Written and (C) 2015-16 Oliver Wagner <owagner@tellerulam.com> 
+  R.I.P.
   
   Provided under the terms of the MIT license.
 
@@ -22,7 +23,7 @@ Dependencies
 * Eclipse Paho for Python - http://www.eclipse.org/paho/clients/python/
   (used for MQTT communication)
 
-[![Build Status](https://travis-ci.org/owagner/kodi2mqtt.svg)](https://travis-ci.org/owagner/kodi2mqtt) Automatically built addons can be downloaded from the release page on GitHub at https://github.com/owagner/kodi2mqtt/releases
+[![Build Status](https://travis-ci.org/gsteen/kodi2mqtt.svg)](https://travis-ci.org/gsteen/kodi2mqtt) Automatically built addons can be downloaded from the release page on GitHub at https://github.com/gsteen/kodi2mqtt/releases
 
 
 Settings

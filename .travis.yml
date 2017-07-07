@@ -1,18 +1,13 @@
 language: python
-
-script: "echo Nothing to do"
+script: echo Nothing to do
 install: true
-
-before_deploy: "zip -r mqtt_addon.zip service.mqtt"
-
+before_deploy: zip -r mqtt_addon.zip service.mqtt
 deploy:
   provider: releases
   api_key:
-    secure: ngx8lgauODj+3ZHPb062piIHYfGwY3DHrbiEPMH87VYBzvUbRJo/JSVJn/JllULCGDHOXITb79D9dbLcpFW+j23abXmd86dfHeVPUFlhgH+VBXtNjmMV5jWdEDYmCIsVORf+dWq4Z5pQjX9GtCpVOUb9wfMF6mRdIgioWj0TsCM=
+    secure: lN2Wpdc/6PxL44VU3D9HNwyjTl3BVU+ZXE7Mhwvjq2eXK7BwagJBU4f4En03AqB7M0wv4PQAHwDu9zDU7jsg1MvKis8wBDh+PZj0wmjoU/eacmeeXyp6lPFRlEhxhqz1KUjHRl7bXJjke/SIKtER44EYlE6ZfFKVnMURvl/qtCe0LwXd5Ga+494AvUIEJ5i40/ePzfi2uvTp9r/+a9WfyI2EcPG4uso9vp4LeTnePsfqshIYe9aEj5z+ZbArmPUN6y/k7kJhS+k0li7bC6DRS0EpNoc8iacNDNvutnpsPmOyDkZtalV7C35w3JO425ytGFi5YDwFTh3096dlQB3bolfAqKDSbulapy9DYWKsSUqxU4ugX94Dox+JE03IekH8fcyZhIIhZFDLhxSB6SUwh3i78HG8w968x+N/AMDJX6tTYonWZq6ABcF1jrQcuo0iuwAiq5pEmr19Hw+fVEbLU9VMAUrV0zmcYZFVxvXvxb+dF1wYioAcI59UZQvDJfZzjm1FsRNlxa7sndvmr1zrPaVaT8UwSBzc6MnjywuAMRL8S62QszuzWRY+tPbSMVTgppjgkMECfQkIHzSE/EVRM25jFJRwP4TLbXiDilROYry0+5x1vtNSUbWFmqGC6VaZciwDd0K0KJPtAVJAli8WbZNYs3SlynqRYw3XfCObU3Q=
   file: mqtt_addon.zip
   skip_cleanup: true
   on:
-    repo: owagner/kodi2mqtt
+    repo: gsteen/kodi2mqtt
     tags: true
-    all_branches: true
-
