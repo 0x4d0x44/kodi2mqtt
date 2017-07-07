@@ -206,6 +206,14 @@ def processplaybackstate(data):
     elif data=="previous":
         player.playprevious()
 
+def processsendcomand(data):
+	try:
+		cmd=json.loads(data)
+		res=xbmc.executeJSONRPC(json.dumps(cmd))
+		mqttlogging("MQTT: JSON-RPC call "+cmd['method']+" returned "+res)
+	except ValueError:
+		mqttlogging("MQTT: JSON-RPC call ValueError")		
+
 def processcommand(topic,data):
     if topic=="notify":
         processnotify(data)
@@ -213,6 +221,8 @@ def processcommand(topic,data):
         processplay(data)
     elif topic=="playbackstate":
         processplaybackstate(data)
+    elif topic=="api":
+		processsendcomand(data)
     else:
         mqttlogging("MQTT: Unknown command "+topic)
 
