@@ -232,6 +232,7 @@ def msghandler(mqc,userdata,msg):
 
 def connecthandler(mqc,userdata,rc):
     mqttlogging("MQTT: Connected to MQTT broker with rc=%d" % (rc))
+    mqc.publish(topic+"connected",2,qos=1,retain=True)
     mqc.subscribe(topic+"command/#",qos=0)
 
 def disconnecthandler(mqc,userdata,rc):
@@ -276,7 +277,6 @@ def startmqtt():
     else:
         mqttlogging("MQTT: No connection possible, giving up")
         return(False)
-    mqc.publish(topic+"connected",2,qos=1,retain=True)
     mqc.loop_start()
     return(True)
 
