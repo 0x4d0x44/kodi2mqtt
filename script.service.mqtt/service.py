@@ -1,15 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
 import xbmc,xbmcaddon
 import json
 import threading
 import time
 import socket
-from lib import client as mqtt
 
 __addon__      = xbmcaddon.Addon()
 __version__    = __addon__.getAddonInfo('version')
+__cwd__        = xbmc.translatePath( __addon__.getAddonInfo('path') ).decode("utf-8")
+__profile__    = xbmc.translatePath( __addon__.getAddonInfo('profile') ).decode("utf-8")
+__resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources', 'lib' ) ).decode("utf-8")
+sys.path.append (__resource__)
+
+import client as mqtt
 
 def getSetting(setting):
     return __addon__.getSetting(setting).strip()
